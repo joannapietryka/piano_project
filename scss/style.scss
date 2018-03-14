@@ -1,0 +1,80 @@
+$old-rose: #B98B82;
+$tangerine: #F18F01;
+$copper-penny: #B76D68;
+$oxford-blue: #0A014F;
+$melon: #F3B3A6;
+
+%clearfix {
+  &::after, &::before {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: 'Dosis', sans-serif;
+}
+body{
+  background-color: #F2E0DC;
+}
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  @extend %clearfix;
+}
+%top-bottom {
+  background-color: $old-rose;
+  padding: 2em;
+  color: $oxford-blue;
+}
+footer {
+  @extend %top-bottom;
+  .copyrights {
+    margin: 25px;
+  }
+}
+header {
+  @extend %top-bottom;
+  text-align: center;
+  h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 220%;
+  }
+}
+.hero {
+  width: 25%;
+  float: left;
+  padding: 1.2em;
+  @extend %clearfix;
+  img {
+    width: 100%;
+    &:hover {
+      border: 3px solid $tangerine;
+      border-radius: 20%;
+    }
+  }
+  &.selected {
+    background-color: $copper-penny;
+  }
+}
+.keybordClass {
+  width: 25%;
+  height: 26em;
+  background-color: $melon;
+  float: left;
+  padding: 1.2em;
+  border: 2px solid $tangerine;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  margin: 30px 0;
+  @extend %clearfix;
+  &:hover{
+    background-color: $oxford-blue;
+  }
+}
