@@ -1,45 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import { Melody } from "./melody.jsx";
+import { Notes } from "./notes.jsx";
 
-
-export class Piano extends React.Component{
-  constructor(props){
-      super(props);
-    }
-  render(){
-  //  if (this.props.selection.length == 3){
-    return(
-      <div className="container">
-        <div className="keybordClass"> </div>
-        <div className="keybordClass"> </div>
-        <div className="keybordClass"> </div>
-        <div className="keybordClass"> </div>
-      </div>
-      )
-    // } else {
-    //   return null;
-    // }
-  }
-}
-export class Footer extends React.Component {
+export class Piano extends React.Component {
+  sounds = {};
   render() {
     return (
-      <footer>
-        <div className="copyrights">
-          <p>Copyright</p>
-        </div>
-      </footer>
-  )
-  }
-}
+      <div className="container longer">
+        <Notes />
+        <Melody />
+        {this.props.filtredList.map(hero => {
+          return (
+            <div>
+              <audio
+                key={hero.sound}
+                ref={x => {
+                  this.sounds[hero.id] = x;
+                }}
+              >
+                <source src={hero.sound} preload="auto" />
+              </audio>
 
-export class PianoFull extends React.Component{
-  render(){
-      return(
-        <div>
-          <Piano selection={this.props.selection}/>
-          <Footer/>
-        </div>
-      )
+              <div
+                key={hero.id}
+                className="keybordClass"
+                onClick={() => this.sounds[hero.id].play()}
+              >
+                <img className="pianoImg" src={hero.url} />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 }
