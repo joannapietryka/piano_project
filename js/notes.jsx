@@ -1,14 +1,6 @@
 import React from "react";
 
-let notes = [
-  "&#9833;",
-  "&#266B;",
-  "&#9834;",
-  "&#9835;",
-  "&#9836;",
-  "&#2669;",
-  "&#266A;"
-];
+let notes = ["\u2669", "\u266A", "\u266B", "\u266C"];
 
 let random = Math.floor(Math.random() * notes.length);
 
@@ -17,7 +9,7 @@ export class Notes extends React.Component {
     return (
       <div className="staff">
         <ul>
-          <li>{notes[random]}</li>
+          <li className="animate">{notes[random]}</li>
         </ul>
       </div>
     );
