@@ -5,7 +5,11 @@ export class Header extends React.Component {
     return (
       <header>
         <h1>Wesołe nutki</h1>
-        <p>Wybierz postacie, które zagrają dla Ciebie</p>
+        {this.props.filtredList.length < 4 ? (
+          <p>Wybierz postacie, które zagrają dla Ciebie</p>
+        ) : (
+          <p>Graj melodie</p>
+        )}
       </header>
     );
   }

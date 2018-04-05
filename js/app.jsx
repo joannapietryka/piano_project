@@ -14,22 +14,19 @@ class App extends React.Component {
           id: 1,
           url: "./img/cat.png",
           selected: false,
-          sound: "./sounds/cat.mp3",
-          note: "&#9833;"
+          sound: "./sounds/cat.mp3"
         },
         {
           id: 2,
-          url: "./img/troll1.png",
+          url: "./img/chick.png",
           selected: false,
-          sound: "./sounds/bug.mp3",
-          note: "&#9833;"
+          sound: "./sounds/bug.mp3"
         },
         {
           id: 3,
           url: "./img/gitara.png",
           selected: false,
-          sound: "./sounds/kop.mp3",
-          note: "&#9833;"
+          sound: "./sounds/kop.mp3"
         },
         {
           id: 4,
@@ -42,29 +39,25 @@ class App extends React.Component {
           id: 5,
           url: "./img/pig.png",
           selected: false,
-          sound: "./sounds/lala.mp3",
-          note: "&#266B;"
+          sound: "./sounds/lala.mp3"
         },
         {
           id: 6,
           url: "./img/scr.png",
           selected: false,
-          sound: "./sounds/tra.mp3",
-          note: "&#266B;"
+          sound: "./sounds/tra.mp3"
         },
         {
           id: 7,
           url: "./img/toy.png",
           selected: false,
-          sound: "./sounds/src.mp3",
-          note: "&#9833;"
+          sound: "./sounds/src.mp3"
         },
         {
           id: 8,
           url: "./img/troll2.png",
           selected: false,
-          sound: "./sounds/troll.mp3",
-          note: "&#9833;"
+          sound: "./sounds/troll.mp3"
         }
       ]
     };
@@ -82,7 +75,7 @@ class App extends React.Component {
     const filtred = this.state.heroList.filter(item => item.selected);
     return (
       <div>
-        <Header />
+        <Header filtredList={filtred} />
         {filtred.length < 4 ? (
           <Heros onSelect={this.select} heroList={this.state.heroList} />
         ) : (
