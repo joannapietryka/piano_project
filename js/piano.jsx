@@ -11,18 +11,17 @@ export class Piano extends React.Component {
     newNote.innerText = notes[random];
     staffLi.appendChild(newNote);
   };
-
   sounds = {};
   render() {
     return (
-      <div className="container longer">
+      <div className="container">
         <div className="staff">
           <ul id="staffLi" />
         </div>
         <Melody />
         {this.props.filtredList.map(hero => {
           return (
-            <div>
+            <div key={hero.sound}>
               <audio
                 key={hero.sound}
                 ref={x => {
@@ -35,13 +34,14 @@ export class Piano extends React.Component {
               <div
                 key={hero.id}
                 className="keybordClass"
-                onClick={() => this.sounds[hero.id].play()}
+                onClick={() => {
+                  this.sounds[hero.id].pause();
+                  this.sounds[hero.id].currentTime = 0;
+                  this.sounds[hero.id].play();
+                  this.addNote();
+                }}
               >
-                <img
-                  className="pianoImg"
-                  src={hero.url}
-                  onClick={this.addNote}
-                />
+                <img className="pianoImg" src={hero.url} />
               </div>
             </div>
           );

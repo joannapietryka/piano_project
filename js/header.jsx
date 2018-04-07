@@ -6,9 +6,13 @@ export class Header extends React.Component {
       <header>
         <h1>Wesołe nutki</h1>
         {this.props.filtredList.length < 4 ? (
-          <p>Wybierz postacie, które zagrają dla Ciebie</p>
+          <div className="toDo">
+            <p>Wybierz 4 postacie, które zagrają dla Ciebie</p>
+          </div>
         ) : (
-          <p>Graj melodie</p>
+          <div className="toDo">
+            <p>🎶 Graj melodie 🎶</p>
+          </div>
         )}
       </header>
     );

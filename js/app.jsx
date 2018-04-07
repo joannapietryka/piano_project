@@ -32,8 +32,7 @@ class App extends React.Component {
           id: 4,
           url: "./img/guy.png",
           selected: false,
-          sound: "./sounds/pig.mp3",
-          note: "&#9833;"
+          sound: "./sounds/pig.mp3"
         },
         {
           id: 5,
