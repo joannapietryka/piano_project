@@ -126,10 +126,16 @@ header {
 
 @keyframes pulse {
   0% {
-    top: 20%;
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(1.2);
+  }
+  66% {
+    transform: scale(0.8);
   }
   100% {
-    top: 33%;
+    transform: scale(1);
   }
 }
 
@@ -140,7 +146,7 @@ header {
   top: 33%;
   &:hover {
     animation-name: pulse;
-    animation-duration: 4s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
   }
 }
@@ -168,15 +174,15 @@ header {
   border-bottom-right-radius: 10%;
 
   &.beats_0 {
-    left: 24%;
+    left: 26%;
   }
   &.beats_1 {
     left: 45%;
   }
   &.beats_2 {
-    left: 66%;
+    left: 64%;
   }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 1440px) {
     width: 5%;
     &.beats_0 {
       left: 30%;
