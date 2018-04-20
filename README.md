@@ -1,6 +1,6 @@
 Project created in React.js
 
-Styles with scss.
+Styled with scss.
 
 Choose your characters and play piano.
 
